@@ -13,5 +13,5 @@ def queryGetShedule(request):
     schedule = getSchedule(day, discipline, times, teacher)
 
     print(id)
-    return HttpResponse((f"ID: {obj.id} | День недели: {obj.day}, Дисциплина: {obj.discipline}, Время проведения: {obj.times}, Преподаватель: {obj.teacher}<br>"
+    return HttpResponse((f"ID: {obj['id']} | День недели: {obj['day']}, Дисциплина: {obj['discipline']}, Время проведения: {obj['times']}, Преподаватель: {obj['teacher']}<br>"
                         for obj in schedule) if len(schedule) else f"Нет в базе")
